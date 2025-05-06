@@ -11,8 +11,16 @@
     <div class="container">
         <nav>
             <a href="#" class="logo">Josh</a>
-                
-            </a>
+                </a>
+             <div class="mid" style="display: none;">Want to know more? Click here</div>
+
+            <script>
+              setInterval(() => {
+                const midDiv = document.querySelector('.mid');
+                midDiv.style.display = (midDiv.style.display === 'none') ? 'block' : 'none';
+              }, 3000); // toggles every 5 seconds
+            </script>
+
             
             <button class="hamburger">
                 <span></span>
