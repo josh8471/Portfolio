@@ -2150,4 +2150,49 @@
         }
     }
 
+
+.mid {
+    display: none;
+    background-color: #fffae6;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1rem; /* Scales better across devices */
+    font-weight: 500;
+    max-width: 90vw; /* Responsive width */
+    width: fit-content;
+    margin: 0 auto;
+    animation: pulse 1.5s infinite;
+    transition: opacity 1s ease-in-out;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+    position: relative;
+    top: 10px;
+    word-wrap: break-word;
+  }
+  
+  /* Attention-grabbing pulse animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+    }
+    50% {
+      transform: scale(1.03);
+      box-shadow: 0 0 18px rgba(255, 204, 0, 0.8);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+    }
+  }
+  
+  /* Optional: Adjust for very small screens */
+  @media (max-width: 480px) {
+    .mid {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+  
     
