@@ -7,7 +7,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
- 
+
+    <style>
+.custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s;
+}
+.custom-modal-content {
+  background: #fff;
+  color: #222;
+  margin: auto;
+  padding: 2rem 2.5rem;
+  border-radius: 1.1rem;
+  width: 90%; max-width: 340px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  position: relative;
+  animation: popIn 0.4s cubic-bezier(0.58,1.67,0.36,0.85);
+}
+.custom-close {
+  position: absolute;
+  top: 10px; right: 18px;
+  font-size: 1.8rem;
+  color: #e23e57;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.custom-close:hover { color: #111; }
+.custom-mail-btn {
+  margin-top: 1.5rem;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 2rem;
+  background: linear-gradient(90deg, #007bff 60%, #24c6dc 100%);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(36,198,220,0.15);
+}
+.custom-mail-btn:hover {
+  background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0;}
+  100% { transform: scale(1); opacity: 1;}
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
 
     
 <body>
@@ -17,8 +73,17 @@
                 </a>
              <div class="mid" style="display: none;">Want to know more? Click here 👉</div>
 
-            
- 
+                    
+                 <!-- Help Popup Modal -->
+<div id="helpModal" class="custom-modal">
+  <div class="custom-modal-content">
+    <span id="closeHelpModal" class="custom-close">&times;</span>
+    <h2>Need any help with any service or project?</h2>
+    <button class="custom-mail-btn" onclick="window.location.href='mailto:basumatarijoshua@gmail.com?subject=Help%20with%20your%20Portfolio%20Project'">
+      Mail Me
+    </button>
+  </div>
+</div>
 
 
 
@@ -379,6 +444,24 @@
             }
         });
     </script>
+
+    <script>
+window.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    document.getElementById('helpModal').style.display = 'flex';
+  }, 5000); // 5 seconds
+
+  document.getElementById('closeHelpModal').onclick = function() {
+    document.getElementById('helpModal').style.display = 'none';
+  }
+  // Optional: Close when clicking outside the modal content
+  document.getElementById('helpModal').onclick = function(event) {
+    if (event.target === this) {
+      this.style.display = 'none';
+    }
+  }
+});
+</script>
     <script src="java.js"></script>
 
 </body>
