@@ -7,44 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-    <style>
-.modal {
-  display: block; /* Show by default. Hide with JS after close */
-  position: fixed;
-  z-index: 9999;
-  left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.65);
-  animation: fadeIn 0.5s;
-}
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-.modal-content {
-  background: #fff;
-  color: #333;
-  margin: 10% auto;
-  padding: 2rem 2.5rem;
-  border-radius: 1.2rem;
-  width: 90%; max-width: 400px;
-  text-align: center;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-  animation: popIn 0.6s cubic-bezier(0.58,1.67,0.36,0.85);
-}
-@keyframes popIn {
-  0% { transform: scale(0.7); opacity: 0;}
-  100% { transform: scale(1); opacity: 1;}
-}
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 22px;
-  font-size: 2rem;
-  color: #ff4b2b;
-  cursor: pointer;
-  font-weight: bold;
-  transition: color 0.2s;
-}
-.close-button:hover { color: #333; }
-</style>
-
+ 
 
     
 <body>
@@ -54,30 +17,9 @@
                 </a>
              <div class="mid" style="display: none;">Want to know more? Click here 👉</div>
 
-            <div id="welcomeModal" class="modal">
-  <div class="modal-content">
-    <span class="close-button" id="closeModal">&times;</span>
-    <h2>🎉 Welcome to My Portfolio! 🎉</h2>
-    <p>Thanks for visiting. Explore my projects and feel free to connect!</p>
-  </div>
-</div>
+            
+ 
 
-
-            <script>
-window.onload = function() {
-  var modal = document.getElementById('welcomeModal');
-  var closeBtn = document.getElementById('closeModal');
-  closeBtn.onclick = function() {
-    modal.style.display = "none";
-  }
-  // Optional: close modal when clicking outside content
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-}
-</script>
 
 
 
