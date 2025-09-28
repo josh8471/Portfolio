@@ -63,19 +63,51 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+/* --- END: MODAL STYLES --- */
+
+
+/* --- START: NEW STYLES FOR PROFILE PICTURE --- */
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Prevents the image from stretching */
+    margin: 25px 0; /* Adds space above and below */
+    border: 4px solid #007bff; /* Adds a blue border */
+    box-shadow: 0 5px 20px rgba(36, 198, 220, 0.25); /* Adds a subtle glow */
+}
+
+/* Optional: To center the hero text content */
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+/* --- END: NEW STYLES --- */
+
 </style>
 
     
 <body>
+<div id="preloader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0, 0, 0, 0.9); display:flex; justify-content:center; align-items:center; z-index:9999;">
+    <div class="preloader-content" style="text-align:center; max-width:100%; width:auto; padding:10px;">
+        <div style="width:100%; max-width:480px; margin:auto;">
+            <img src="images/dog.gif" alt="Loading..." style="width:100%; height:auto; border-radius:10px;">
+        </div>
+        <p style="color: #fff;">🤚🏻😊Wait Josh's website is loading...🔃🔃</p>
+    </div>
+</div>
+
     <div class="container">
         <nav>
             <a href="#" class="logo">Josh</a>
                 </a>
              <div class="mid" style="display: none;">Want to know more? Click here 👉</div>
 
-                    
-                 <!-- Help Popup Modal -->
-<div id="helpModal" class="custom-modal">
+                   
+          <!--
+        <div id="helpModal" class="custom-modal">
   <div class="custom-modal-content">
     <span id="closeHelpModal" class="custom-close">&times;</span>
     <h2>Need any help with any service or project?</h2>
@@ -84,6 +116,7 @@
     </button>
   </div>
 </div>
+-->
 
 
 
@@ -113,9 +146,10 @@
             <div class="hero">
                 <div class="hero-text">
                     <span id="helo">Hello World</span>
+                    <img src="./Images/profile.jpg" alt="Joshua Basumatary Profile Picture" class="profile-picture">
                     <h1> I'm <span>Joshua Basumatary</span></h1>
                     <h2 class="blue-text">  </h2>
-                    <p>Passionate developer, always open to learning new technologies and exploring fresh ideas and to contribute my knowledge. If you need any help or support in the field of software development, feel free to connect with me. Let’s build something great together!</p>
+                    <p> I’m a passionate software developer who loves learning new tech and building things, sometimes they work, sometimes they just crashed. Let’s connect and build something fun together!</p>
                     
                     <div class="buttons">
                         <a href="mailto:basumatarijoshua@gmail.com" class="btn-hire">Hire Me</a>
@@ -150,8 +184,7 @@
                       ar 
                       shadow-intensity="1" 
                       exposure="0.8"
-                      camera-orbit="0deg 90deg 1-1"> <!-- Adjusted to face front -->
-                    </model-viewer>
+                      camera-orbit="0deg 90deg 1-1"> </model-viewer>
                   </div>
             </div>
         </div>
@@ -218,7 +251,6 @@
                         
                         <div class="skill-tags">
                             <div class="skill-tag intermediate">Python</div>
-                            <div class="skill-tag intermediate">Java</div>
                         </div>
                     </div>
                     
@@ -276,29 +308,14 @@
                         </div>
                     </div>
                 </div>
+             
                 
-                <div class="learning-container">
-                    <div class="section-subheader">
-                        <h3>Currently Learning</h3>
-                        <p>Technologies I'm actively expanding my knowledge in</p>
-                    </div>
+                
                     
-                    <div class="learning-tags">
-                        <div class="learning-tag">React.js</div>
-                        <div class="learning-tag">Three.js</div>
-                        <div class="learning-tag">Node.js</div>
-                        <div class="learning-tag">Express.js</div>
-                        <div class="learning-tag">MongoDB</div>
-                        <div class="learning-tag">Machine Learning</div>
-                    </div>
-                </div>
+                    
                 
-               
-                     
             
-          
             
-          
     </section>
 
     <section id="contact" class="contact-section">
@@ -352,7 +369,7 @@
                                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                             </a>
-                           
+                            
                         </div>
                     </div>
                     
@@ -362,7 +379,6 @@
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
                 <div class="contact-form-container">
                     <form
                       action="https://formspree.io/f/mzzreyzo"
@@ -373,28 +389,26 @@
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" placeholder="Enter your name" required>
                       </div>
-                  
+                    
                       <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" placeholder="Enter your email" required>
                       </div>
-                  
+                    
                       <div class="form-group">
                         <label for="subject">Subject</label>
                         <input type="text" id="subject" name="subject" placeholder="Enter subject">
                       </div>
-                  
+                    
                       <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
                       </div>
-                  
-                      <!-- Optional: Add a honeypot to block bots -->
+                    
                       <input type="text" name="_gotcha" style="display:none">
-                  
-                      <!-- Optional: Redirect after submission -->
+                    
                       <input type="hidden" name="_redirect" value="http://127.0.0.1:5500/thank_you.html">
-                  
+                    
                       <button type="submit" class="submit-btn">
                         <span>Send Message</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -438,7 +452,7 @@
         });
     </script>
 
-    <script>
+  <!--   <script>
 window.addEventListener('DOMContentLoaded', function() {
   setTimeout(function() {
     document.getElementById('helpModal').style.display = 'flex';
@@ -453,7 +467,20 @@ window.addEventListener('DOMContentLoaded', function() {
       this.style.display = 'none';
     }
   }
-});
+}); 
+</script> -->
+<script>
+    // --- PRELOADER SCRIPT ---
+    window.addEventListener('load', () => {
+        // Wait for 2 seconds (2000 milliseconds) before hiding the preloader
+        setTimeout(() => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+            // Optionally, you can also remove it from the DOM after fading out:
+            // preloader.style.display = 'none'; 
+        }, 1000); // 2000ms = 2 seconds
+    });
 </script>
     <script src="java.js"></script>
 
