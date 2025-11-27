@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="style.css">
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EPH7HF13BR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EPH7HF13BR');
+</script>
+<style>
+
+    /* Thumbnail */
+.project-thumb {
+  position: relative;
+  cursor: pointer;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid cyan;  /* matches cyber theme */
+}
+
+/* Play Icon */
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 42px;
+  color: white;
+  background: rgba(0,255,255,0.2);
+  padding: 12px 18px;
+  border-radius: 50%;
+  border: 2px solid cyan;
+  box-shadow: 0 0 12px cyan;
+}
+
+/* Popup Modal */
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.video-modal video {
+  width: 90%;
+  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px cyan;
+}
+
+.close-btn {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+    <section class="projects-section" id="projects">
+  <h2 class="section-title">Projects</h2>
+    <!-- Project 2 -->
+<div class="project-card">
+
+  <!-- Thumbnail -->
+  <div class="project-thumb" onclick="openVideo('videos/smartphone.mp4')">
+    <img src="images/mobo.png" alt="Smartphone eCommerce Thumbnail">
+    <div class="play-icon">▶</div>
+  </div>
+
+  <div class="project-content">
+    <h3>Smartphone eCommerce Website</h3>
+    <p>
+      A complete eCommerce platform with product management, cart system, admin dashboard and authentication.
+    </p>
+    <div class="project-tags">
+      <span>HTML</span><span>CSS</span><span>JavaScript</span>   <span>PHP</span><span>MySQL</span><span></span>
+    </div>
+    <div class="project-links">
+      <a href="#" class="btn">Live Demo</a>
+      <a href="#" class="btn-outline">GitHub</a>
+    </div>
+  </div>
+</div>
+
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="images/rece.png" alt="Project Screenshot">
+      </div>
+      <div class="project-content">
+        <h3>Digital Receipt Generator</h3>
+        <p> 
+          A full-featured system for generating digital receipts with a subscription model, built with PHP, MySQL, and HTML/CSS.
+        </p>
+        <div class="project-tags">
+       UI/UX</span><span>Responsive</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn">Live Demo</a>
+          <a href="#" class="btn-outline">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="images/movie.png" alt="Project Screenshot">
+      </div>
+      <div class="project-content">
+        <h3>Movie Recommendation System</h3>
+        <p>
+          A machine-learning based app using Streamlit that recommends movies based on similarity scores.
+        </p>
+        <div class="project-tags">
+          <span>Python</span><span>Streamlit</span><span>ML</span><span>Pandas</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn">Live Demo</a>
+          <a href="#" class="btn-outline">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Video Popup -->
+<div id="videoModal" class="video-modal">
+  <span class="close-btn" onclick="closeVideo()">×</span>
+  <video id="modalVideo" controls autoplay></video>
+</div>
+    
+<script>
+function openVideo(src) {
+  const modal = document.getElementById("videoModal");
+  const video = document.getElementById("modalVideo");
+
+  video.src = src;
+  modal.style.display = "flex";
+  video.play();
+}
+
+function closeVideo() {
+  const modal = document.getElementById("videoModal");
+  const video = document.getElementById("modalVideo");
+
+  modal.style.display = "none";
+  video.pause();
+  video.currentTime = 0;
+  video.src = "";
+}
+</script>
+
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+      });
+  </script>
+    <div id="navbar"></div>
+    
+
+</body>
+</html>

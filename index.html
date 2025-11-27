@@ -99,7 +99,7 @@
 
     
 <body>
-<div id="preloader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0, 0, 0, 0.9); display:flex; justify-content:center; align-items:center; z-index:9999;">
+<div id="preloader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:black; display:flex; justify-content:center; align-items:center; z-index:9999;">
     <div class="preloader-content" style="text-align:center; max-width:100%; width:auto; padding:10px;">
         <div style="width:100%; max-width:480px; margin:auto;">
             <img src="dog.gif" alt="Loading..." style="width:100%; height:auto; border-radius:10px;">
@@ -147,33 +147,42 @@
             
             <ul class="nav-links">
                 <li><a id="Home" href="#">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="about.html">About me</a></li>
+
             </ul>
         </nav>
 
-        <div class="home">
-            <div class="hero">
-                <div class="hero-text">
-                    <span id="helo">Hello World</span>
-                    <img src="./Images/profile.jpg" alt="Joshua Basumatary Profile Picture" class="profile-picture">
-                    <h1> I'm <span>Joshua Basumatary</span></h1>
-                    <h2 class="blue-text">  </h2>
-                    <p> I’m a passionate software developer who loves learning new tech and building things, sometimes they work, sometimes they just crashed. Let’s connect and build something fun together!</p>
-                    
-                    <div class="buttons">
-                        <a href="mailto:basumatarijoshua@gmail.com" class="btn-hire">Hire Me</a>
-                        <a href="#" class="btn-talk" onclick="scrollToContact()">Let's Talk</a>
+      <div class="home">
+    <div class="hero">
+        <div class="hero-text">
 
-                        <script>
-                          function scrollToContact() {
-                            document.getElementById("contact").scrollIntoView({
-                              behavior: "smooth"
-                            });
-                          }
-                        </script>
-                        
-                        
-                    </div>
+            <span id="helo" class="terminal-line">> Hello World_</span>
+
+            <img src="./Images/profile.jpg" alt="Joshua Basumatary Profile Picture" class="profile-picture">
+
+            <h1 class="hacker-title">I'm <span>Joshua Basumatary</span></h1>
+
+            <h2 class="cyber-subtitle">Software Developer </h2>
+
+            <p class="cyber-desc">
+                I’m a passionate developer exploring the worlds of Tech, web development,
+                cybersecurity, and AI. I enjoy building systems sometimes they work,
+                sometimes they crash but they always teach me something new.
+            </p>
+
+            <div class="buttons">
+                <a href="mailto:basumatarijoshua@gmail.com" class="cyber-btn">Hire Me</a>
+                <a href="#" class="cyber-btn-outline" onclick="scrollToContact()">Let's Talk</a>
+            </div>
+
+            
+
+        </div>
+
+        <div class="hero-glow"></div>
+    </div>
+</div>
                     
                     <div class="social-icons">
                         <a href="https://www.linkedin.com/in/joshua-basumatary-01455794/"><img src="Images/linkedin.png" alt="LinkedIn"></a>
@@ -488,10 +497,16 @@ window.addEventListener('DOMContentLoaded', function() {
             preloader.style.visibility = 'hidden';
             // Optionally, you can also remove it from the DOM after fading out:
             // preloader.style.display = 'none'; 
-        }, 3000); // 2000ms = 2 seconds
+        }, 2000); // 2000ms = 2 seconds
     });
 </script>
     <script src="java.js"></script>
-
+    <script>
+                function scrollToContact() {
+                    document.getElementById("contact").scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+            </script>
 </body>
 </html>
